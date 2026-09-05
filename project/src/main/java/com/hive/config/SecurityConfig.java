@@ -254,6 +254,11 @@ public class SecurityConfig {
                                 "/ws/**"
                         ).permitAll()
 
+                        // Actuator health endpoint
+                        .requestMatchers(
+                                "/actuator/health"
+                        ).permitAll()
+
                         // Everything else requires JWT
                         .anyRequest().authenticated()
                 )
